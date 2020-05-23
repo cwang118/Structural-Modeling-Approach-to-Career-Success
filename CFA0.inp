@@ -1,0 +1,37 @@
+title: Hui Project;
+
+data: file is Hui Project.dat;
+
+variable: 
+names are
+educ q9  q20 q23 q24 
+q4  q44 q45 q46 q47 
+q1 q2a q2b 
+q30a  q30b  q30e  q30f  
+q2c q30c  q30d  q30g  
+q37  
+sex q43;
+
+Usevariables are
+educ q9  q20 q23 q24 
+q4  q44 q45 q46 q47 
+q1 q2a q2b 
+q30a  q30b  q30e  q30f  
+q2c q30c  q30d  q30g  
+q37;
+
+MISSING ARE all (-99);
+
+analysis: type=general;
+
+model: 
+
+EDU by educ q9  q20 q23 q24;
+GENDER by q4  q44 q45 q46 q47;
+PREDISPO by q1 q2a q2b;
+EXPECTAT by q30a  q30b  q30e  q30f;
+SATISFAC by q2c q30c  q30d  q30g;
+PAY by q37@1;q37@0;
+
+output: 
+sampstat modindices standardized ;
